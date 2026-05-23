@@ -23,9 +23,22 @@ body {
   align-items: center;
   padding: 20px 0;
   position: sticky;
-  top: 0;
+  top: 0px;
   background-color: white;
   z-index: 9999;
+}
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw;
+  height: 1px;
+
+  background-color: #dcdcdc;
+  overflow: hidden;
 }
 .company {
   display: flex;
@@ -206,8 +219,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   padding-bottom: 8px;
-  border-bottom: 3px solid black;
-  transition: 2s;
+  border-bottom: 3px solid transparent;
+  transition: 0.5s ease;
 }
 .things-menu button:hover {
   border-bottom: 3px solid black;
@@ -222,7 +235,7 @@ body {
 
 /* Default active menu */
 .things-button-home {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid black !important;
 }
 .things-button-camera,
 .things-button-cruise,
