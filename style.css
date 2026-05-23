@@ -922,18 +922,11 @@ body {
   border: none;
   background-color: transparent;
 } */
-/* ========================================= */
-/* RESPONSIVE DESIGN */
-/* ========================================= */
 
-/* Tablet Devices */
+/* Tablet */
 @media screen and (max-width: 1024px) {
-  .container {
-    width: 95%;
-  }
 
-  /* Navbar */
-  .navbar {
+  .navbar-container {
     flex-direction: column;
     gap: 20px;
   }
@@ -943,23 +936,15 @@ body {
     justify-content: center;
   }
 
-  /* Heading */
-  .where-to .where-home {
-    font-size: 45px;
-    text-align: center;
-  }
-
-  /* Search */
   .search-input {
-    width: 90%;
+    width: 85%;
   }
 
-  /* Badge Section */
   .badge-section,
-  .badge-section-two {
+  .badge-section-two__container {
     flex-direction: column;
-    text-align: center;
     align-items: center;
+    text-align: center;
   }
 
   .section-content h1,
@@ -973,20 +958,22 @@ body {
     max-width: 500px;
   }
 
-  /* Interest Cards */
   .interest-image__one,
   .countries-image__one,
-  .inspire-image__one {
+  .inspire-image__one,
+  .iconic-image__one,
+  .food-image__one {
     flex-wrap: wrap;
   }
 
   .image-card,
   .country-image-card,
-  .inspire-image-card {
+  .inspire-image-card,
+  .iconic-image-card,
+  .food-image-card {
     min-width: 48%;
   }
 
-  /* Footer */
   .footer-container {
     flex-direction: column;
     gap: 40px;
@@ -998,10 +985,20 @@ body {
   }
 }
 
-/* Mobile Devices */
+
+/* Mobile */
 @media screen and (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 95%;
+  }
+
   /* Navbar */
-  .navbar {
+  .navbar-container {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -1021,13 +1018,13 @@ body {
     justify-content: center;
   }
 
-  /* Main Heading */
+  /* Hero Heading */
   .where-to .where-home {
-    font-size: 35px;
+    font-size: 38px;
     text-align: center;
   }
 
-  /* Menu Buttons */
+  /* Things Menu */
   .things-menu {
     gap: 15px;
   }
@@ -1036,12 +1033,13 @@ body {
     font-size: 14px;
   }
 
-  /* Search Bar */
+  /* Search */
   .search-input {
     width: 100%;
     flex-direction: column;
     gap: 15px;
     border-radius: 20px;
+    padding: 15px;
   }
 
   .search-button {
@@ -1052,11 +1050,12 @@ body {
     width: 100%;
   }
 
-  /* Badge Section */
+  /* Badge Sections */
   .badge-section,
-  .badge-section-two {
+  .badge-section-two__container {
+    flex-direction: column;
     padding: 25px;
-    border-radius: 20px;
+    gap: 25px;
   }
 
   .section-content h1,
@@ -1071,29 +1070,45 @@ body {
     text-align: center;
   }
 
-  /* Cards */
+  .section-image img,
+  .section-image-two img {
+    width: 100%;
+  }
+
+  /* All Card Sections */
   .interest-image__one,
   .countries-image__one,
-  .inspire-image__one {
+  .inspire-image__one,
+  .iconic-image__one,
+  .food-image__one {
     flex-direction: column;
   }
 
   .image-card,
   .country-image-card,
-  .inspire-image-card {
+  .inspire-image-card,
+  .iconic-image-card,
+  .food-image-card {
     width: 100%;
   }
 
   .image-card img,
   .country-image-card img,
-  .inspire-image-card img {
+  .inspire-image-card img,
+  .iconic-image-card img,
+  .food-image-card img {
     height: 300px;
   }
 
-  /* Arrow Button */
+  /* Arrow Icons */
+  .country-image-card .fa-arrow-right,
   .inspire-image-card .fa-arrow-right,
-  .country-image-card .fa-arrow-right {
-    transform: translate(40%, -50%);
+  .iconic-image-card .fa-arrow-right,
+  .food-image-card .fa-arrow-right {
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    z-index: 5;
   }
 
   /* Footer */
@@ -1109,17 +1124,21 @@ body {
 
   .footer-section-two {
     flex-direction: column;
-    gap: 20px;
     align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 20px;
   }
 
   .footer-copyright {
     margin-top: 20px;
+    flex-wrap: wrap;
   }
 }
 
-/* Small Mobile Devices */
-@media screen and (max-width: 480px) {
+
+/* Small Mobile */
+@media screen and (max-width: 500px) {
+
   .company h2 {
     font-size: 22px;
   }
@@ -1129,7 +1148,11 @@ body {
   }
 
   .where-to .where-home {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .things-menu button {
+    font-size: 13px;
   }
 
   .section-content h1,
@@ -1142,8 +1165,14 @@ body {
     font-size: 14px;
   }
 
-  .image-card h2 {
-    font-size: 28px;
+  .image-card h2,
+  .iconic-image-card h2 {
+    font-size: 24px;
+  }
+
+  .country-must-do,
+  .food-must-do {
+    font-size: 14px;
   }
 
   .search-text input {
@@ -1151,6 +1180,11 @@ body {
   }
 
   .search-button button {
-    font-size: 16px;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .ai-button button {
+    font-size: 13px;
   }
 }
