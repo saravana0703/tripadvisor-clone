@@ -53,6 +53,7 @@ body {
   transition: 0.3s;
 }
 .ai-button button {
+  position: relative;
   border: none;
   font-size: 15px;
   font-weight: bold;
@@ -61,8 +62,37 @@ body {
   padding-bottom: 10px;
   background-color: transparent;
   border: 2px;
-  box-shadow: 0 0 5px 2px #57f203;
+  box-shadow:
+    0 0 5px #57f203,
+    0 0 10px #57f203,
+    0 0 20px #57f203;
   border-radius: 30px;
+  animation: aiGlow 2s infinite alternate;
+  transition: 0.3s;
+}
+
+/* Glow Animation */
+@keyframes aiGlow {
+  0% {
+    box-shadow:
+      0 0 5px #57f203,
+      0 0 10px #57f203,
+      0 0 20px #57f203;
+  }
+
+  50% {
+    box-shadow:
+      0 0 10px #57f203,
+      0 0 20px #57f203,
+      0 0 40px #57f203;
+  }
+
+  100% {
+    box-shadow:
+      0 0 5px #57f203,
+      0 0 10px #57f203,
+      0 0 20px #57f203;
+  }
 }
 
 .ai-button button:hover {
@@ -526,8 +556,13 @@ body {
   flex-direction: row;
   justify-content: space-between;
   gap: 40px;
-  padding: 50px;
-  max-width: 1400px;
+}
+.badge-section-two__container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .section-content-two {
@@ -559,6 +594,8 @@ body {
   font-weight: bold;
 }
 .section-image-two img {
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 450px;
   border-radius: 20px;
   height: max-content;
@@ -566,20 +603,23 @@ body {
 
 /* Footer Css */
 .footer-section {
-  background-color: white;
+  background-color: rgb(223, 220, 220);
   margin-top: 30px;
   display: block;
-  width: 100%;
 }
 .footer-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 .footer-container__one {
   display: flex;
   justify-content: space-between;
   gap: 70px;
+  margin-top: 30px;
 }
 .footer-one p {
   font-size: 16px;
@@ -625,6 +665,9 @@ body {
   line-height: 1.75;
   font-size: 13px;
 }
+.footer-container__two {
+  margin-top: 30px;
+}
 .footer-container__two p {
   font-size: 16px;
 }
@@ -645,6 +688,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 .footer-copyright {
   display: flex;
